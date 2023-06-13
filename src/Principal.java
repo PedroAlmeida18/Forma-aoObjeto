@@ -4,8 +4,12 @@ public class Principal {
         meuFilme.nome = " O poderoso Chefão";
         meuFilme.anoDelançamento = 1978;
         meuFilme.duraçãoFilme = 180;
-        System.out.println(meuFilme.nome);
-        System.out.println(meuFilme.anoDelançamento);
-
+        meuFilme.exibeFicha();
+        meuFilme.avalia(7);
+        meuFilme.avalia(7);
+        meuFilme.avalia(7);
+        System.out.println(meuFilme.somaAvaliçao);
+        System.out.println(meuFilme.totalAvaliaçao);
+        System.out.println(meuFilme.mediaAvaliaçao());
     }
 }
