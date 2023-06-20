@@ -22,7 +22,8 @@ public class Série extends Titulo{
         this.ativa = ativa;
     }
 
-    public int getEpPorTemporada() {
+
+     public int getEpPorTemporada() {
         return epPorTemporada;
     }
 
@@ -36,6 +37,11 @@ public class Série extends Titulo{
 
     public void setMinutosPorEp(int minutosPorEp) {
         this.minutosPorEp = minutosPorEp;
+    }
+
+    @Override
+    public int getDuraçãoFilme() {
+        return temporadas * epPorTemporada * minutosPorEp;
     }
 }
 

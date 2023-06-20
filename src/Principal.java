@@ -11,6 +11,7 @@ public class Principal {
         meuFilme.avalia(7);
         meuFilme.avalia(7);
         meuFilme.avalia(7);
+        System.out.println("DURAÇÃO DO FILME :"+ meuFilme.getDuraçãoFilme());
 
         System.out.println("Total de avaliações : "+ meuFilme.getTotalAvaliaçao());
         System.out.println(meuFilme.mediaAvaliaçao());
@@ -20,5 +21,7 @@ public class Principal {
         serie.exibeFicha();
         serie.setTemporadas(9);
         serie.setMinutosPorEp(40);
+        serie.setEpPorTemporada(10) ;
+        System.out.println("Duração para manatonar a série no momento  : "+ serie.getDuraçãoFilme());
     }
 }
