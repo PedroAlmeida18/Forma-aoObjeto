@@ -32,7 +32,7 @@ public class Série extends Titulo{
     }
 
     public int getMinutosPorEp() {
-        return minutosPorEp;
+        return minutosPorEp ;
     }
 
     public void setMinutosPorEp(int minutosPorEp) {

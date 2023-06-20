@@ -6,6 +6,6 @@ public class Filme extends  Titulo {
         return diretor;
     }
     public void setDiretor(String diretor) {
-        this.diretor = diretor;
+        this.diretor = diretor ;
     }
 }

@@ -51,7 +51,7 @@ public class Titulo {
     }
     public void avalia(double nota ){
         somaAvaliçao += nota;
-        totalAvaliaçao++;
+        totalAvaliaçao++  ;
     }
     public  double mediaAvaliaçao(){return somaAvaliçao/totalAvaliaçao;}
 

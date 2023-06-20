@@ -7,6 +7,7 @@ public class Principal {
         meuFilme.setNome(" O poderoso Chefão");;
         meuFilme.setAnoDelançamento(1978);
         meuFilme.setDuraçãoFilme(180);
+        System.out.println("CRIAÇÃO POR PEDRO HENRIQUE DE ALMEIDA SANTOS ");
         meuFilme.exibeFicha();
         meuFilme.avalia(7);
         meuFilme.avalia(7);
