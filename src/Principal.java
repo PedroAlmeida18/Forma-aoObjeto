@@ -1,3 +1,4 @@
+import br.com.alura.ScreenMatch.calculos.CalculadoraDeTempo;
 import br.com.alura.ScreenMatch.modelos.Filme;
 import br.com.alura.ScreenMatch.modelos.Série;
 
@@ -24,5 +25,18 @@ public class Principal {
         serie.setMinutosPorEp(40);
         serie.setEpPorTemporada(10) ;
         System.out.println("Duração para manatonar a série no momento  : "+ serie.getDuraçãoFilme());
+        System.out.println("__________________________________________________________-");
+        CalculadoraDeTempo calculadoraTempo = new CalculadoraDeTempo();
+        calculadoraTempo.inclui(meuFilme);
+        System.out.println("TEMPO TOTAL : "+ calculadoraTempo.getTempo_total());
+        System.out.println("__________________________________________________________-");
+        Filme outroFilme = new Filme();
+        outroFilme.setDuraçãoFilme(100);
+        outroFilme.setNome("Star WARS");
+        outroFilme.setAnoDelançamento(2008);
+        calculadoraTempo.inclui(outroFilme);
+        calculadoraTempo.inclui(serie);
+        System.out.println(" TEMPO TOTAL De Filmes na plataforma  : "+ calculadoraTempo.getTempo_total());
+
     }
 }
