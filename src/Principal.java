@@ -1,4 +1,6 @@
 import br.com.alura.ScreenMatch.calculos.CalculadoraDeTempo;
+import br.com.alura.ScreenMatch.calculos.Recomendacao;
+import br.com.alura.ScreenMatch.modelos.Episodios;
 import br.com.alura.ScreenMatch.modelos.Filme;
 import br.com.alura.ScreenMatch.modelos.Série;
 
@@ -37,6 +39,14 @@ public class Principal {
         calculadoraTempo.inclui(outroFilme);
         calculadoraTempo.inclui(serie);
         System.out.println(" TEMPO TOTAL De Filmes na plataforma  : "+ calculadoraTempo.getTempo_total());
+        Recomendacao filtraRecomedacao = new Recomendacao();
+        filtraRecomedacao.filtra(meuFilme);
+        Episodios episodio = new Episodios();
+        episodio.setNome("A BOLA CAIU ");
+        episodio.setNumero(1);
+        episodio.setSerie(serie);
+        episodio.setTotalVizualicao(150);
+        filtraRecomedacao.filtra(episodio);
 
     }
 }
