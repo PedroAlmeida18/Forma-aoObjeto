@@ -6,11 +6,14 @@ import br.com.alura.ScreenMatch.modelos.Série;
 
 public class Principal {
     public static void main(String[] args) {
+        System.out.println("------------------------------------------------------");
+        System.out.println("PROJETO CRIADO POR : " +
+                "PEDRO HENRIQUE DE ALMEIDA SANTOS ");
+        System.out.println("------------------------------------------------------");
         Filme meuFilme = new Filme(); // Tipo referência
         meuFilme.setNome(" O poderoso Chefão");;
         meuFilme.setAnoDelançamento(1978);
         meuFilme.setDuraçãoFilme(180);
-        System.out.println("CRIAÇÃO POR PEDRO HENRIQUE DE ALMEIDA SANTOS ");
         meuFilme.exibeFicha();
         meuFilme.avalia(7);
         meuFilme.avalia(7);
