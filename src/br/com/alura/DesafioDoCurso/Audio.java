@@ -2,6 +2,35 @@ package br.com.alura.DesafioDoCurso;
 
 public class Audio {
     private  String titulo ;
+    private int duracao ;
+    private int totalReproduções;
+    private int  totalCurtidas ;
+    private double classificacao;
+
+    public int getDuracao() {
+        return duracao;
+    }
+
+    public int getTotalReproduções() {
+        return totalReproduções;
+    }
+
+    public int getTotalCurtidas() {
+        return totalCurtidas;
+    }
+
+    public double getClassificacao() {
+        return classificacao;
+    }
+
+
+    public  void curtir (){
+        this.totalCurtidas ++;
+
+    }
+    public  void reproduz (){
+        this.totalReproduções++;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -10,42 +39,5 @@ public class Audio {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
-    public int getDuracao() {
-        return duracao;
-    }
-
-    public void setDuracao(int duracao) {
-        this.duracao = duracao;
-    }
-
-    public int getTotalReproduções() {
-        return totalReproduções;
-    }
-
-    public void setTotalReproduções(int totalReproduções) {
-        this.totalReproduções = totalReproduções;
-    }
-
-    public int getCurtidas() {
-        return curtidas;
-    }
-
-    public void setCurtidas(int curtidas) {
-        this.curtidas = curtidas;
-    }
-
-    public int getClassificacao() {
-        return classificacao;
-    }
-
-    public void setClassificacao(int classificacao) {
-        this.classificacao = classificacao;
-    }
-
-    private int duracao ;
-    private int totalReproduções;
-    private int  curtidas ;
-    private int classificacao;
 
 }
