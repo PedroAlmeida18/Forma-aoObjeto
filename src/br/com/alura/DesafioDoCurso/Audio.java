@@ -5,7 +5,7 @@ public class Audio {
     private int duracao ;
     private int totalReproduções;
     private int  totalCurtidas ;
-    private double classificacao;
+    private int classificacao;
 
     public int getDuracao() {
         return duracao;
