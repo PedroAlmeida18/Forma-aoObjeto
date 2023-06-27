@@ -1,5 +1,6 @@
 package br.com.alura.DesafioDoCurso.Principal;
 
+import br.com.alura.DesafioDoCurso.MinhasPreferidas;
 import br.com.alura.DesafioDoCurso.Musica;
 import br.com.alura.DesafioDoCurso.Podcast;
 
@@ -27,14 +28,17 @@ public class Main_desafio {
         novas_Historias.setTitulo("NOVAS HISTÓRIAS ");
         novas_Historias.setApresentador("Pedro  Henrique de Almeida Santos ");
         novas_Historias.setDescricao("Pedro recebe convidados aonde eles debatem sobre diversos temas da atualidade");
-        for (int i = 0; i < 15000; i++) {
+        for (int i = 0; i < 25; i++) {
             novas_Historias.reproduz();
 
         }
-        for (int i = 0; i < 11000; i++) {
+        for (int i = 0; i < 100; i++) {
             novas_Historias.curtir();
 
         }
+        MinhasPreferidas preferidas =new MinhasPreferidas();
+        preferidas.inclui(novas_Historias);
+        preferidas.inclui(minha_musica);
         System.out.println("-------------------------------------------");
         System.out.println("Dados sobre o podcast ");
         System.out.println(" O podcast de nome : " + novas_Historias.getTitulo());
