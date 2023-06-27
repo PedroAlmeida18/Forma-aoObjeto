@@ -40,6 +40,8 @@ public class Main_desafio {
         preferidas.inclui(novas_Historias);
         preferidas.inclui(minha_musica);
         System.out.println("-------------------------------------------");
+        System.out.println(" FINALIZAÇÃO DO CURSO ALURA ");
+        System.out.println("-------------------------------------------");
         System.out.println("Dados sobre o podcast ");
         System.out.println(" O podcast de nome : " + novas_Historias.getTitulo());
         System.out.println("tem como apresentador o : "+ novas_Historias.getApresentador());
