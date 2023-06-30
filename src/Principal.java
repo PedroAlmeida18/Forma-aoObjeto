@@ -4,6 +4,8 @@ import br.com.alura.ScreenMatch.modelos.Episodios;
 import br.com.alura.ScreenMatch.modelos.Filme;
 import br.com.alura.ScreenMatch.modelos.Série;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         System.out.println("------------------------------------------------------");
@@ -11,7 +13,7 @@ public class Principal {
                 "PEDRO HENRIQUE DE ALMEIDA SANTOS ");
         System.out.println("------------------------------------------------------");
         Filme meuFilme = new Filme(); // Tipo referência
-        meuFilme.setNome(" O poderoso Chefão");;
+        meuFilme.setNome(" O poderoso Chefão");
         meuFilme.setAnoDelançamento(1978);
         meuFilme.setDuraçãoFilme(180);
         meuFilme.exibeFicha();
@@ -44,12 +46,27 @@ public class Principal {
         System.out.println(" TEMPO TOTAL De Filmes na plataforma  : "+ calculadoraTempo.getTempo_total());
         Recomendacao filtraRecomedacao = new Recomendacao();
         filtraRecomedacao.filtra(meuFilme);
+
         Episodios episodio = new Episodios();
         episodio.setNome("A BOLA CAIU ");
         episodio.setNumero(1);
         episodio.setSerie(serie);
         episodio.setTotalVizualicao(150);
         filtraRecomedacao.filtra(episodio);
+
+       // Inicio do 3 curso da formação alura, tratamento de listas
+        Filme filmeDoPualo = new Filme();
+        filmeDoPualo.setDuraçãoFilme(200);
+        filmeDoPualo.setNome("Dogville");
+        filmeDoPualo.setAnoDelançamento(2003);
+        filmeDoPualo.avalia(8);
+
+        ArrayList<Filme> listaFilmes = new ArrayList<>();
+        listaFilmes.add(filmeDoPualo);
+        listaFilmes.add(meuFilme);
+        listaFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista :"+ listaFilmes.size());
+        System.out.println("Primeiro filme :"+ listaFilmes.get(0).getNome() );
 
     }
 }
