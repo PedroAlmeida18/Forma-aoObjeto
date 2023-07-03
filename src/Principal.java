@@ -12,8 +12,7 @@ public class Principal {
         System.out.println("PROJETO CRIADO POR : " +
                 "PEDRO HENRIQUE DE ALMEIDA SANTOS ");
         System.out.println("------------------------------------------------------");
-        Filme meuFilme = new Filme(); // Tipo referência
-        meuFilme.setNome(" O poderoso Chefão");
+        Filme meuFilme = new Filme(" O poderoso Chefão"); // Tipo referência
         meuFilme.setAnoDelançamento(1978);
         meuFilme.setDuraçãoFilme(180);
         meuFilme.exibeFicha();
@@ -37,9 +36,8 @@ public class Principal {
         calculadoraTempo.inclui(meuFilme);
         System.out.println("TEMPO TOTAL : "+ calculadoraTempo.getTempo_total());
         System.out.println("__________________________________________________________-");
-        Filme outroFilme = new Filme();
+        Filme outroFilme = new Filme("Star WARS");
         outroFilme.setDuraçãoFilme(100);
-        outroFilme.setNome("Star WARS");
         outroFilme.setAnoDelançamento(2008);
         calculadoraTempo.inclui(outroFilme);
         calculadoraTempo.inclui(serie);
@@ -55,9 +53,8 @@ public class Principal {
         filtraRecomedacao.filtra(episodio);
 
        // Inicio do 3 curso da formação alura, tratamento de listas
-        Filme filmeDoPualo = new Filme();
+        Filme filmeDoPualo = new Filme("Dogville");
         filmeDoPualo.setDuraçãoFilme(200);
-        filmeDoPualo.setNome("Dogville");
         filmeDoPualo.setAnoDelançamento(2003);
         filmeDoPualo.avalia(8);
 
