@@ -12,8 +12,7 @@ public class Principal {
         System.out.println("PROJETO CRIADO POR : " +
                 "PEDRO HENRIQUE DE ALMEIDA SANTOS ");
         System.out.println("------------------------------------------------------");
-        Filme meuFilme = new Filme(" O poderoso Chefão"); // Tipo referência
-        meuFilme.setAnoDelançamento(1978);
+        Filme meuFilme = new Filme(" O poderoso Chefão", 1978); // Tipo referência
         meuFilme.setDuraçãoFilme(180);
         meuFilme.exibeFicha();
         meuFilme.avalia(7);
@@ -23,9 +22,7 @@ public class Principal {
 
         System.out.println("Total de avaliações : "+ meuFilme.getTotalAvaliaçao());
         System.out.println(meuFilme.mediaAvaliaçao());
-        Série serie = new Série();
-        serie.setNome("Lost ");
-        serie.setAnoDelançamento(2000);
+        Série serie = new Série("Lost", 2000);
         serie.exibeFicha();
         serie.setTemporadas(9);
         serie.setMinutosPorEp(40);
@@ -36,9 +33,8 @@ public class Principal {
         calculadoraTempo.inclui(meuFilme);
         System.out.println("TEMPO TOTAL : "+ calculadoraTempo.getTempo_total());
         System.out.println("__________________________________________________________-");
-        Filme outroFilme = new Filme("Star WARS");
+        Filme outroFilme = new Filme("Star WARS",2008);
         outroFilme.setDuraçãoFilme(100);
-        outroFilme.setAnoDelançamento(2008);
         calculadoraTempo.inclui(outroFilme);
         calculadoraTempo.inclui(serie);
         System.out.println(" TEMPO TOTAL De Filmes na plataforma  : "+ calculadoraTempo.getTempo_total());
@@ -53,7 +49,7 @@ public class Principal {
         filtraRecomedacao.filtra(episodio);
 
        // Inicio do 3 curso da formação alura, tratamento de listas
-        Filme filmeDoPualo = new Filme("Dogville");
+        Filme filmeDoPualo = new Filme("Dogville",2003);
         filmeDoPualo.setDuraçãoFilme(200);
         filmeDoPualo.setAnoDelançamento(2003);
         filmeDoPualo.avalia(8);
