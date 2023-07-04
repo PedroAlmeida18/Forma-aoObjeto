@@ -11,6 +11,9 @@ public class Série extends Titulo implements Classificavel {
     public Série(String nome, int anoDelançamento) {
         super(nome, anoDelançamento);
     }
+    public String toString() {
+        return "Série:"+ this.getNome() + "(" + this.getAnoDelançamento()+ ")";
+    }
 
     public int getTotalVizualicao() {
         return totalVizualicao;
