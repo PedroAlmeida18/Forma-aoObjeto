@@ -3,7 +3,6 @@ package br.com.alura.principal;
 import br.com.alura.ScreenMatch.modelos.Filme;
 import br.com.alura.ScreenMatch.modelos.Série;
 import br.com.alura.ScreenMatch.modelos.Titulo;
-
 import java.util.ArrayList;
 
 public class PrincipalList {
@@ -15,7 +14,6 @@ public class PrincipalList {
         Filme outroFilme = new Filme("Star WARS",2008);
         outroFilme.avalia(10);
         Série serie = new Série("Lost", 2000);
-
         ArrayList<Titulo> listaassistidos = new ArrayList<>();
         listaassistidos.add(filmeDoPualo);
         listaassistidos.add(meuFilme);
@@ -23,9 +21,11 @@ public class PrincipalList {
         listaassistidos.add(serie);
         for (Titulo item :listaassistidos) {
             System.out.println(item);
-            Filme filme =  (Filme )item;
-            System.out.println("Classificação :"+ ((Filme) item).getclassificacao());
-            
+            if (item instanceof Filme filme  && filme.getclassificacao() >2   ) {
+                System.out.println("Classificação :"+  filme.getclassificacao());
+            }
+
+
         }
     }
 }
