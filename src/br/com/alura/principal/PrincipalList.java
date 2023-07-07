@@ -14,7 +14,11 @@ public class PrincipalList {
         Filme outroFilme = new Filme("Star WARS",2008);
         outroFilme.avalia(10);
         Série serie = new Série("Lost", 2000);
-        ArrayList<Titulo> listaassistidos = new ArrayList<>();
+        Filme f1 = filmeDoPualo;
+
+        System.out.println(f1);
+        System.out.println(filmeDoPualo);
+        /*ArrayList<Titulo> listaassistidos = new ArrayList<>();
         listaassistidos.add(filmeDoPualo);
         listaassistidos.add(meuFilme);
         listaassistidos.add(outroFilme);
@@ -26,6 +30,18 @@ public class PrincipalList {
             }
 
 
+        }*/
+        // Exercicio de programação se realizarmos a comparação ente filme 1 e 2 dará que sõ filmes difrentes, pois esctão em espaços de memoeria sif
+        // se for filme 1 e 3 dará igual, pois filme 3 é apenas uma varivale que aponta para o obj filme 1
+        Filme filme1 = new Filme("Pedro ",2003);
+        Filme filme2 = new Filme("Pedro ",2003);
+        Filme filme3 = filme1;
+        if (filme1==filme3){
+            System.out.println("IGUAIS ");
+
+        }
+        else {
+            System.out.println("DIFERENTES ");
         }
     }
 }
