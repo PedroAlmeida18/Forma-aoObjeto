@@ -3,10 +3,8 @@ package br.com.alura.principal;
 import br.com.alura.ScreenMatch.modelos.Filme;
 import br.com.alura.ScreenMatch.modelos.Série;
 import br.com.alura.ScreenMatch.modelos.Titulo;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
+
+import java.util.*;
 
 public class PrincipalList {
     public static void main(String[] args) {
@@ -21,7 +19,7 @@ public class PrincipalList {
 
         System.out.println(f1);
         System.out.println(filmeDoPualo);
-        ArrayList<Titulo> listaassistidos = new ArrayList<>();
+        List<Titulo> listaassistidos = new LinkedList<>();
         listaassistidos.add(filmeDoPualo);
         listaassistidos.add(meuFilme);
         listaassistidos.add(outroFilme);
