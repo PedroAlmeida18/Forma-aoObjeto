@@ -6,6 +6,7 @@ import br.com.alura.ScreenMatch.modelos.Titulo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalList {
     public static void main(String[] args) {
@@ -47,5 +48,7 @@ public class PrincipalList {
         System.out.println("LISTA DE FILMES DESORDENADO : " + listaassistidos);
         Collections.sort(listaassistidos);
         System.out.println("Lista de filmes ordenados :" +listaassistidos);
+        listaassistidos.sort(Comparator.comparing(Titulo::getAnoDelançamento)); // Comparador pelo ano de lançamento, uso do sort
+        System.out.println("Ordenando pelo ano de lançamento : " + listaassistidos);
     }
 }
