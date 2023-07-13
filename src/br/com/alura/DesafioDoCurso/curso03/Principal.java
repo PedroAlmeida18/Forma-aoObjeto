@@ -20,16 +20,14 @@ public class Principal {
             if (comprarealizada){
                 System.out.println("Compra realizada!");
                 System.out.println("Digite 1 se quiser sair ou digite 0 para continuar");
-                //System.out.println("Saldo atual "+ cartaoCredito.getSaldo());
-                //System.out.println("limite atual do cartão  "+ cartaoCredito.getLimite());
+
                 sair = leitor.nextInt();
 
             }
             else{
                 System.out.println("Compra não realizada !");
                 System.out.println("Digite 1 se quiser sair ou digite 0 para continuar");
-                //System.out.println("Saldo atual "+ cartaoCredito.getSaldo());
-               // System.out.println("limite atual do cartão  "+ cartaoCredito.getLimite());
+                
                 sair = leitor.nextInt();
 
 
