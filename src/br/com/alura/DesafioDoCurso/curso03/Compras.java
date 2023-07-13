@@ -1,6 +1,6 @@
 package br.com.alura.DesafioDoCurso.curso03;
 
-public class Compras {
+public class Compras implements Comparable {
     private String descrcao ;
     private double valor ;
 
@@ -30,7 +30,9 @@ public class Compras {
         return "Compra : " + descrcao + " Valoe = " + valor;
     }
 
-    public static void main(String[] args) {
-        System.out.println("");
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }

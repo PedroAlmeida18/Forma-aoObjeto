@@ -23,7 +23,7 @@ public class Cartao {
     }
 
     public double getLimite() {
-        return limite;
+        return limite - saldo;
     }
 
     public double getSaldo() {
