@@ -1,6 +1,7 @@
 package br.com.alura.principal;
 
 import br.com.alura.ScreenMatch.modelos.Titulo;
+import br.com.alura.ScreenMatch.modelos.Tituloomdb;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -24,7 +25,8 @@ public class PrincipalcomBusca {
         String json = response.body();
         System.out.println(json);
         Gson gson = new Gson();
-        Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+        //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
+        Tituloomdb meuTitulo = gson.fromJson(json,Tituloomdb.class);
         System.out.println(meuTitulo);
 
     }
