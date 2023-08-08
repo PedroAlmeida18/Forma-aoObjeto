@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class PrincipalcomBusca {
     public static void main(String[]args)  throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
-        System.out.println("Digite o nome do texto que você deseja procurar:");
+        System.out.println("Digite o nome do Título que você deseja procurar:");
         var busca = leitura.nextLine();
         String end = "http://www.omdbapi.com/?t="+busca+ "&apikey=43dbd051";
         HttpClient client = HttpClient.newHttpClient();
@@ -30,10 +30,15 @@ public class PrincipalcomBusca {
 
         Tituloomdb meutituloomdb = gson.fromJson(json,Tituloomdb.class);
         System.out.println(meutituloomdb);
-        Titulo meuTitulo = new Titulo(meutituloomdb);
-        System.out.println("titulo convertido ");
-        System.out.println(meuTitulo);
-
+        try{
+            Titulo meuTitulo = new Titulo(meutituloomdb);
+            System.out.println("titulo convertido ");
+            System.out.println(meuTitulo);
+        } catch (NumberFormatException e ){
+            System.out.println("Aconteceu um erro");
+            System.out.println(e.getMessage());
+        }
+        System.out.println("O PROGRAMA FINALIZOU CORRETAMENTE ");
     }
 
 
