@@ -1,5 +1,6 @@
 package br.com.alura.principal;
 
+import br.com.alura.ScreenMatch.excecao.ErroDeConversaoDeanoException;
 import br.com.alura.ScreenMatch.modelos.Titulo;
 import br.com.alura.ScreenMatch.modelos.Tituloomdb;
 import com.google.gson.FieldNamingPolicy;
@@ -17,7 +18,7 @@ public class PrincipalcomBusca {
         Scanner leitura = new Scanner(System.in);
         System.out.println("Digite o nome do Título que você deseja procurar:");
         var busca = leitura.nextLine();
-        String end = "http://www.omdbapi.com/?t="+busca+ "&apikey=43dbd051";
+        String end = "http://www.omdbapi.com/?t="+busca.replace(" ","+")+ "&apikey=43dbd051";
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -42,6 +43,11 @@ public class PrincipalcomBusca {
             System.out.println("Aconteceu erro de busca na argumentação, verifique a busca");
             System.out.println(a.getMessage());
         }
+        catch ( ErroDeConversaoDeanoException e){
+            System.out.println(e.getMessage());
+
+        }
+
         System.out.println("O PROGRAMA FINALIZOU CORRETAMENTE "); // identaçao ctrl alt i
         // error a máquina não consegue rodar
         // Excepetion, posso prever
