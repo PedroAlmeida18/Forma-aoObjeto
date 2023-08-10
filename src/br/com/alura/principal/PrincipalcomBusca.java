@@ -22,11 +22,11 @@ public class PrincipalcomBusca {
         Scanner leitura = new Scanner(System.in);
         String busca = "";
         List<Titulo> titulos = new ArrayList<>();
-        while (!busca.equalsIgnoreCase("Sair ") ) {
-            System.out.println("Digite o nome do Título que você deseja procurar:");
+        while (!busca.equalsIgnoreCase("Encerrar ") ) {
+            System.out.println("Digite o nome do Título que você deseja procurar ou digite Encerrar para encerrar o programa:");
             busca = leitura.nextLine();
-            if(busca.equalsIgnoreCase("sair")){
-                System.out.println("O programa parou ");
+            if(busca.equalsIgnoreCase("Encerrar")){
+                System.out.println("O programa foi encerrado ");
                 break;
 
             }
@@ -48,6 +48,8 @@ public class PrincipalcomBusca {
                 System.out.println("titulo convertido ");
                 System.out.println(meuTitulo);
 
+
+                titulos.add(meuTitulo);
             } catch (NumberFormatException e) {
                 System.out.println("Aconteceu um erro");
                 System.out.println(e.getMessage());
@@ -59,6 +61,7 @@ public class PrincipalcomBusca {
 
             }
         }
+        System.out.println("A lista de filmes é :" + titulos);
 
         System.out.println("O PROGRAMA FINALIZOU CORRETAMENTE "); // identaçao ctrl alt i
         // error a máquina não consegue rodar
