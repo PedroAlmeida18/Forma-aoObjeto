@@ -18,44 +18,52 @@ import java.util.Scanner;
 public class PrincipalcomBusca {
     public static void main(String[]args)  throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
-        System.out.println("Digite o nome do Título que você deseja procurar:");
-        var busca = leitura.nextLine();
-        String end = "http://www.omdbapi.com/?t="+busca.replace(" ","+")+ "&apikey=43dbd051";
-        try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(end))
-                    .build();
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-            String json = response.body();
-            System.out.println(json);
-            Gson gson = new GsonBuilder().
-                    setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+        String busca = "";
+        while (!busca.equalsIgnoreCase("Sair ") ) {
+            System.out.println("Digite o nome do Título que você deseja procurar:");
+            busca = leitura.nextLine();
+            if(busca.equalsIgnoreCase("sair")){
+                System.out.println("O programa parou ");
+                break;
 
-            Tituloomdb meutituloomdb = gson.fromJson(json,Tituloomdb.class);
-            System.out.println(meutituloomdb);
-            Titulo meuTitulo = new Titulo(meutituloomdb);
-            System.out.println("titulo convertido ");
-            System.out.println(meuTitulo);
-            FileWriter escrita = new FileWriter("filmes.txt");
-            escrita.write(meuTitulo.toString());
-            escrita.close();
-        } catch (NumberFormatException e ){
-            System.out.println("Aconteceu um erro");
-            System.out.println(e.getMessage());
-        } catch (IllegalArgumentException a){
-            System.out.println("Aconteceu erro de busca na argumentação, verifique a busca");
-            System.out.println(a.getMessage());
-        }
-        catch ( ErroDeConversaoDeanoException e){
-            System.out.println(e.getMessage());
+            }
+            String end = "http://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=43dbd051";
+            try {
+                HttpClient client = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create(end))
+                        .build();
+                HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+                String json = response.body();
+                System.out.println(json);
+                Gson gson = new GsonBuilder().
+                        setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
 
+                Tituloomdb meutituloomdb = gson.fromJson(json, Tituloomdb.class);
+                System.out.println(meutituloomdb);
+                Titulo meuTitulo = new Titulo(meutituloomdb);
+                System.out.println("titulo convertido ");
+                System.out.println(meuTitulo);
+                FileWriter escrita = new FileWriter("filmes.txt");
+                escrita.write(meuTitulo.toString());
+                escrita.close();
+            } catch (NumberFormatException e) {
+                System.out.println("Aconteceu um erro");
+                System.out.println(e.getMessage());
+            } catch (IllegalArgumentException a) {
+                System.out.println("Aconteceu erro de busca na argumentação, verifique a busca");
+                System.out.println(a.getMessage());
+            } catch (ErroDeConversaoDeanoException e) {
+                System.out.println(e.getMessage());
+
+            }
         }
 
         System.out.println("O PROGRAMA FINALIZOU CORRETAMENTE "); // identaçao ctrl alt i
         // error a máquina não consegue rodar
         // Excepetion, posso prever
     }
+
 
 
 }
