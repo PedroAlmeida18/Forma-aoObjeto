@@ -6,6 +6,8 @@ import br.com.alura.ScreenMatch.modelos.Tituloomdb;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -32,10 +34,12 @@ public class PrincipalcomBusca {
 
             Tituloomdb meutituloomdb = gson.fromJson(json,Tituloomdb.class);
             System.out.println(meutituloomdb);
-            //try{
             Titulo meuTitulo = new Titulo(meutituloomdb);
             System.out.println("titulo convertido ");
             System.out.println(meuTitulo);
+            FileWriter escrita = new FileWriter("filmes.txt");
+            escrita.write(meuTitulo.toString());
+            escrita.close();
         } catch (NumberFormatException e ){
             System.out.println("Aconteceu um erro");
             System.out.println(e.getMessage());
