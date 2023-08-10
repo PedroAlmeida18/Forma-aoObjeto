@@ -22,6 +22,9 @@ public class PrincipalcomBusca {
         Scanner leitura = new Scanner(System.in);
         String busca = "";
         List<Titulo> titulos = new ArrayList<>();
+        Gson gson = new GsonBuilder().
+                setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).setPrettyPrinting()
+        .create();
         while (!busca.equalsIgnoreCase("Encerrar ") ) {
             System.out.println("Digite o nome do Título que você deseja procurar ou digite Encerrar para encerrar o programa:");
             busca = leitura.nextLine();
@@ -39,8 +42,7 @@ public class PrincipalcomBusca {
                 HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
                 String json = response.body();
                 System.out.println(json);
-                Gson gson = new GsonBuilder().
-                        setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+
 
                 Tituloomdb meutituloomdb = gson.fromJson(json, Tituloomdb.class);
                 System.out.println(meutituloomdb);
@@ -62,6 +64,10 @@ public class PrincipalcomBusca {
             }
         }
         System.out.println("A lista de filmes é :" + titulos);
+        FileWriter escrita = new FileWriter("filmes.json");
+        escrita.write(gson.toJson(titulos));
+        escrita.close();
+        leitura.close();
 
         System.out.println("O PROGRAMA FINALIZOU CORRETAMENTE "); // identaçao ctrl alt i
         // error a máquina não consegue rodar
