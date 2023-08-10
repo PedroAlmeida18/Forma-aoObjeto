@@ -13,12 +13,15 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrincipalcomBusca {
     public static void main(String[]args)  throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
         String busca = "";
+        List<Titulo> titulos = new ArrayList<>();
         while (!busca.equalsIgnoreCase("Sair ") ) {
             System.out.println("Digite o nome do Título que você deseja procurar:");
             busca = leitura.nextLine();
@@ -44,9 +47,7 @@ public class PrincipalcomBusca {
                 Titulo meuTitulo = new Titulo(meutituloomdb);
                 System.out.println("titulo convertido ");
                 System.out.println(meuTitulo);
-                FileWriter escrita = new FileWriter("filmes.txt");
-                escrita.write(meuTitulo.toString());
-                escrita.close();
+
             } catch (NumberFormatException e) {
                 System.out.println("Aconteceu um erro");
                 System.out.println(e.getMessage());
